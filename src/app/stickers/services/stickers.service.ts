@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { SearchResponse, Sticker } from '../interfaces/stickers.interfaces';
 
-const API_KEY: string = 'QSrX6KCzfZBtOkBu91vQtpf69ug1yXfH'
+const API_KEY: string = ''
 const URL: string = 'http://api.giphy.com/v1/stickers'
 
 @Injectable({
