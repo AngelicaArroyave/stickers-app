@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StickersService } from 'src/app/stickers/services/stickers.service';
 
 @Component({
   selector: 'shared-sidebar',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
+  private _tagsHistory: string[] = []
 
+  constructor(private stickersService: StickersService) { }
+
+  get tagsHistory(): string[] {
+    return this.stickersService.tagsHistory
+  }
 }
