@@ -14,4 +14,8 @@ export class SidebarComponent {
   get tagsHistory(): string[] {
     return this.stickersService.tagsHistory
   }
+
+  searchTag(tag: string): void {
+    this.stickersService.searchTag(tag)
+  }
 }

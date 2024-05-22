@@ -1,6 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+import { SearchResponse, Sticker } from '../interfaces/stickers.interfaces';
+
 const API_KEY: string = 'QSrX6KCzfZBtOkBu91vQtpf69ug1yXfH'
 const URL: string = 'http://api.giphy.com/v1/stickers'
 
@@ -8,6 +10,7 @@ const URL: string = 'http://api.giphy.com/v1/stickers'
   providedIn: 'root'
 })
 export class StickersService {
+  public stickerList: Sticker[] = []
   private _tagsHistory: string[] = []
 
   constructor(private http: HttpClient) { }
@@ -40,7 +43,7 @@ export class StickersService {
                     .set('limit', '10')
                     .set('q', tag)
 
-    this.http.get(`${URL}/search`, { params })
-      .subscribe(response => console.log(response))
+    this.http.get<SearchResponse>(`${URL}/search`, { params })
+      .subscribe(response => this.stickerList = response.data)
   }
 }

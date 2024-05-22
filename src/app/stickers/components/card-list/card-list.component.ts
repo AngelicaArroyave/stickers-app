@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Sticker } from '../../interfaces/stickers.interfaces';
 
 @Component({
   selector: 'stickers-card-list',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-list.component.css']
 })
 export class CardListComponent {
-
+@Input()
+public stickers: Sticker[] = []
 }
