@@ -1,0 +1,21 @@
+.custom-card {
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.custom-card .card-img-top {
+  height: 210px;
+  object-fit: cover;
+}
+
+.custom-card .card-body {
+  height: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
