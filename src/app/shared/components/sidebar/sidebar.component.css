@@ -1,0 +1,18 @@
+#sidebar {
+  height: 100vh;
+  width: 250px;
+  background: rgb(63,94,251);
+  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+.list-group-item {
+  border-color: blueviolet;
+  transition: transform .3s ease-in-out;
+}
+
+.list-group-item:hover {
+  border-color: rgb(247, 241, 241);
+  border-radius: 0;
+  transform: scale(1.05);
+  background-color: rgb(247, 241, 241);
+}
