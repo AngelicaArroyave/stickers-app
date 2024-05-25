@@ -5,8 +5,7 @@ import { Sticker } from '../../interfaces/stickers.interfaces';
 
 @Component({
   selector: 'stickers-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  templateUrl: './home-page.component.html'
 })
 export class HomePageComponent {
   constructor(private stickersService: StickersService) { }

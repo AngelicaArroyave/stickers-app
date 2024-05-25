@@ -12,6 +12,7 @@ const URL: string = 'http://api.giphy.com/v1/stickers'
 export class StickersService {
   public stickerList: Sticker[] = []
   private _tagsHistory: string[] = []
+  public countStickers: number = 0
 
   constructor(private http: HttpClient) {
     this.loadLocalStorage()
@@ -21,13 +22,13 @@ export class StickersService {
     return [...this._tagsHistory]
   }
 
-  searchTag(tag: string): void {
+  searchTag(tag: string, pagination: number = 1): void {
     tag = tag.trim()
 
     if(tag.length === 0) return
 
     this.organizeHistory(tag)
-    this.makeARequest(tag)
+    this.makeARequest(tag, pagination)
   }
 
   private organizeHistory(tag: string) {
@@ -40,14 +41,18 @@ export class StickersService {
     this.saveLocalStorage()
   }
 
-  private makeARequest(tag: string): void {
+  private makeARequest(tag: string, pagination: number): void {
     const params = new HttpParams()
                     .set('api_key', API_KEY)
-                    .set('limit', '10')
+                    .set('limit', '12')
+                    .set('offset', pagination)
                     .set('q', tag)
 
     this.http.get<SearchResponse>(`${URL}/search`, { params })
-      .subscribe(response => this.stickerList = response.data)
+      .subscribe(response => {
+        this.stickerList = response.data
+        this.countStickers = response.pagination.total_count
+      })
   }
 
   private saveLocalStorage(): void {

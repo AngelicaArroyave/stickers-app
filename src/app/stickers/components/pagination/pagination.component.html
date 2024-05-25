@@ -1,0 +1,17 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link" aria-label="Previous" (click)="searchTagPagination()">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item" *ngFor="let i of numbers">
+      <a class="page-link" [class.active]="activeBtn === i" (click)="searchTagPagination(i)"> {{ i }} </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" aria-label="Next" (click)="nextPagination()">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
