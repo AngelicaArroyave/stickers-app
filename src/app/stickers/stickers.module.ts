@@ -5,13 +5,15 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
     HomePageComponent,
     SearchBoxComponent,
     CardListComponent,
-    PaginationComponent
+    PaginationComponent,
+    CardComponent
   ],
   imports: [
     CommonModule
