@@ -1,5 +1,5 @@
 <div class="card mb-2 text-center bg-dark custom-card">
-  <img class="image card-img-top bg-body-secondary" [src]="sticker.images.downsized_medium.url" [alt]="sticker.title">
+  <shared-lazy-image class="image bg-body-secondary" [url]="sticker.images.downsized_medium.url" [alt]="sticker.title || 'No title'"></shared-lazy-image>
   <div class="card-body text-white">
     <p class="card-text"> {{ sticker.title || 'No title' }} </p>
   </div>
